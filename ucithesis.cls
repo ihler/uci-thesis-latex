@@ -4,12 +4,14 @@
 %
 % Disclaimer: not endorsed by UCI, provided without any guarantees.
 %
-% Authors: 
+% Authors:
 % Xianping Ge <xge@ics.uci.edu>
 % Trevor Harmon <tharmon@uci.edu>
 % Lars Otten <lotten@uci.edu>
+% Tyler Sutterley <tsutterl@uci.edu>
 %
 % Changelog:
+% Nov 17, 2015: Minor edit to Spacing in Curriculum Vitae Section.
 % Oct 11, 2012: Defaulted back to standard \appendix with subsequent \chapter,
 %               since custom \appendix confused figure/table counters. (Lars)
 % Oct 10, 2012: Changed all margins to 1 in and removed signature page. (Lars)
@@ -156,7 +158,7 @@
 {
 	\begin{center}
 		\textbf{\Large CURRICULUM VITAE} \\
-		\vspace{0.4in}
+		\vspace{0.25in}
 		\textbf{\large{\Authorname}}
 	\end{center}
 	\Curriculumvitae

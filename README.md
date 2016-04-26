@@ -1,51 +1,61 @@
 uci-thesis-latex
 ================
 
-### A LaTeX template for thesis and dissertation documents at UC Irvine.
+#### A LaTeX template for thesis and dissertation documents at UC Irvine.  
 
-Adapted from a blog post here:
+LaTeX template originally from one linked on UCI Library website.  
+	https://github.com/lotten/uci-thesis-latex  
+Credit to Xianping Ge, Trevor Harmon and Lars Otten  
 
-- http://vocaro.com/trevor/blog/2008/01/08/a-latex-template-for-uci-dissertations/
+Scrubbed versions of the thesis manual are in uci-manual  
+	http://special.lib.uci.edu/dissertations/electronic/tdmanuale.html  
 
-Credit goes to Trevor, author of the site above, and those students
-who he inherited the template from (see the change log in the cls
-file).
+FAQ's  
+	http://special.lib.uci.edu/dissertations/electronic/faqtd75e.html  
 
-However, it seems the site above isn't actively maintained anymore, so
-I reorganized and updated things a bit to comply (to the best of my
-knowledge) with the latest UCI Theses and Dissertation Manual for
-electronic filing as of Fall 2013:
+Electronic Thesis Dissertation Consultation Request Form (pre-check):  
+	http://special.lib.uci.edu/dissertations/etd-request-form.html  
 
-- http://special.lib.uci.edu/dissertations/electronic/tdmanuale.html
+Filing Deadlines  
+	http://www.grad.uci.edu/academics/filing%20deadlines/index.html  
 
-#### Download
+Graduate Division Forms:  
+	http://www.grad.uci.edu/forms/  
 
-The template homepage is:
-- https://github.com/lotten/uci-thesis-latex
+Electronic Degree Submission Instructions:  
+	http://www.grad.uci.edu/academics/degree-completion/electronic-instructions.html  
 
-A zip archive of the latest version is available directly at:
-- https://github.com/lotten/uci-thesis-latex/archive/master.zip
+Checklist:  
+	http://www.grad.uci.edu/forms/current-student/Phd_Dissertation_Checklist.docx  
 
-#### Usage
+Form 2 Signature Page / Report on Final Examination:  
+	http://www.grad.uci.edu/forms/current-student/PhD_Form_II.docx  
 
-The main file is `thesis.tex`, from which a number of other files are
-included. Take a look at the comments in the LaTeX sources for some
-more specific pointers.
+Dissertation Approval Form:  
+	http://www.grad.uci.edu/forms/current-student/Dissertation-Thesis_Approval_Form.docx  
 
-To compile, simply run `thesis.tex` through your LaTeX executable of
-choice. I've tested with `latex`+`dvipdf` on Linux, but `pdflatex` and
-others should work equally well. An optional, simple makefile to
-automate some of the steps is also included (adapted from Trevor,
-customize to suit your needs).
+Filing Fees:  
+	http://www.grad.uci.edu/forms/current-student/Filing_Fee_Petition.doc  
+	http://www.grad.uci.edu/forms/current-student/Filing_Fee_Petition_Summer.doc  
 
-#### Disclaimer
+Dissertation submission website:  
+	http://www.etdadmin.com/cgi-bin/school?siteId=200  
+Some items to have on hand:  
+ -  A PDF copy of your dissertation/thesis. This must be a single file. If your manuscript is in Word or RTF format, we can convert it into a PDF.
+ -  Abstract
+ -  Optional Supplementary files (images, data, etc.) that are an integral part of the dissertation/thesis, but not part of the full text.
+ -  Advisor and other Committee Members' Names
+ -  Subject Categories - 1 - 3 that best describe your dissertation/thesis' [subject area](http://corpweb.proquest.com/assets/etd/umi_subjectcategoriesguide.pdf).
 
-Even though UCI Special Collections and Archives has referred students
-to this template, it is _not officially maintained by UCI_ and provided
-here _without any guarantees whatsoever_.
 
-That being said, I believe it can be genuinely useful to future grad
-students and I'll try my best to maintain it going forward. So if you
-find anything that is at odds with UCI requirements, now or in the
-future, or have other suggestions feel free to submit a pull request
-on GitHub or contact me directly (lotten _at_ uci _dot_ edu).
+ProQuest charges different publishing fees depending on the publishing options that you select.  
+ -  The current fee for the Traditional Publishing option is $65 for doctoral dissertations and $55 for Master’s theses.  
+ -  The fee for the Open Access Publishing option is $160 for doctoral dissertations and $55 for Master’s theses.  
+ -  UCI will the cover the cost of the Traditional Publishing fee ($65 for doctoral dissertations, $55 for Master’s theses) regardless of whether you select the Traditional or Open Access option.  
+ -  Students who choose the Open Access option will be responsible for paying the difference between the Traditional Publishing Fee and the Open Access Fee. ($95 for both doctoral dissertations and Master’s theses)  
+
+#### Why use Git for manuscripts?
+ -  Single files: using git simplifies things as there's only a single version of a manuscript.
+ -  Merging: if two people work on the same file at the same time, they can be merged without much issue.
+ -  Simplified "diff" documents: can also use latexdiff-vc (latexdiff with version control) to make pdf files similar to Word documents with "Track Changes". More information [here](../../wiki/LaTeX-Tools).
+ -  Easier collaboration: No need to email files back and forth.

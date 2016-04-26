@@ -1,3 +1,15 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# LaTeX and Vim #
+######################
 *.aux
 *.bbl
 *.blg
@@ -17,12 +29,15 @@
 *.nlo
 *.out
 *.pdfsync
+*-eps-converted-to.pdf
 *.ps
 *.snm
 *.synctex.gz
+*.synctex.gz(busy)
 *.toc
 *.vrb
 *.maf
 *.mtc
 *.mtc0
 *.swp
+.!*
