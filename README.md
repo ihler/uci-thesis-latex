@@ -3,11 +3,13 @@ uci-thesis-latex
 
 #### A LaTeX template for thesis and dissertation documents at UC Irvine.  
 
-LaTeX template originally from one linked on UCI Library website.  
-	https://github.com/lotten/uci-thesis-latex  
-Credit to Xianping Ge, Trevor Harmon and Lars Otten  
+LaTeX template originally created by updating a 2008 version from 
+[Trevor Harmon](http://vocaro.com/trevor/blog/2008/01/08/a-latex-template-for-uci-dissertations/) 
+with edits from [Lars Otten](https://github.com/lotten/uci-thesis-latex).  
 
-Scrubbed versions of the thesis manual are in uci-manual  
+Credit to previous versions to Xianping Ge, Trevor Harmon and Lars Otten  
+
+Scrubbed versions of the UCI thesis manual are in the [uci-manual](./uci-manual) directory  
 	http://special.lib.uci.edu/dissertations/electronic/tdmanuale.html  
 
 FAQ's  
