@@ -12,7 +12,23 @@
 %--
 %-- Notes: Add short title to figures, sections, via square brackets,
 %-- e.g. \section[short]{long}.
-\documentclass[12pt,fleqn]{ucithesis}
+
+%\documentclass[fleqn]{ucithesis}    % Orig: left-justified (indented) equations
+\documentclass[fancy,strict]{ucithesis}   % Version that was handed in to the library
+%%\documentclass[fancy]{ucithesis}        % Version with headers, etc
+%%\documentclass[fancy,twoside,fliplr]{ucithesis}    % Version with headers, etc (flipped!)
+%\documentclass[fancy,twoside,openright]{ucithesis}  % Alternate two-sided layout (NOT for official submission!)
+%\documentclass[fancy,openright]{ucithesis}          % One sided layout that matches two-sided layout
+% Options:
+%   fancy: use fancyhdr to create headings, and also add nicer title pages and section headings
+%   noLoF, noLoT, noLoA:  suppress List of Figures, Tables, or Algorithms in output
+%   twoside: use two-sided layout (note: not allowed by the UCI dissertation standard)
+%   openright: force chapters to start on an odd page (on the "right" of a book layout)
+
+% Set a section symbol (default: black square) 
+% Example: place graphic "sectionmark.pdf" (or other extension) before each numbered section
+% \sectionsymbol{\protect\includegraphics[height=1.5ex]{sectionmark}} 
+\sectionsymbol{\protect\includegraphics[height=1.5ex]{graybox}}
 
 % A few common packages
 \usepackage{amsmath,mathtools}
@@ -20,17 +36,43 @@
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{natbib}
-\usepackage{relsize}
+%\usepackage{relsize}
+
+% Some other useful packages
 \usepackage{caption}
-\usepackage{subcaption}
-\usepackage{multirow}
+\usepackage{subcaption}  % \begin{subfigure}...\end{subfigure} within figure
+%\usepackage{multirow}
 \usepackage{tabularx}
 \usepackage[bottom,symbol]{footmisc}
-\usepackage{titlesec}
+
+
+% My added packages
+\usepackage{enumerate}% http://ctan.org/pkg/enumerate
+\usepackage{verbatim}
+\usepackage{amsfonts, amssymb, mathrsfs}
+%\usepackage[round,authoryear]{natbib}
+%\usepackage[numbers]{natbib}
+%\usepackage{natbibspacing}
+%\usepackage[colorlinks,citecolor=blue,lin  kcolor=blue]{hyperref}  % hyperlink  \url \href{}{}  \hyperref[]{}
+\usepackage{array}
+%\usepackage{showlabels}
+%\usepackage[inline]{showlabels}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{tikz}
+\usetikzlibrary{%
+	calc,%
+	decorations.pathmorphing,%
+	fadings,%
+	shadings%
+}
+
+\usepackage{float}   % include this if also including hyperref and algorithm
 
 % plainpages=false fixes the "duplicate ignored" error with page counters
 % Set pdfborder to 0 0 0 to disable colored borders around PDF hyperlinks
-\usepackage[plainpages=false,pdfborder={0 0 0},colorlinks=true,urlcolor=black,citecolor=black,linkcolor=black]{hyperref}
+%\usepackage[plainpages=false,pdfborder={0 0 0}, colorlinks,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage[plainpages=false,pdfborder={0 0 0}, colorlinks,citecolor=black,linkcolor=black,urlcolor=black]{hyperref}
 \usepackage{cleveref}
 
 % If statement for using chapterbib package (default is false)
@@ -47,8 +89,12 @@
 % automatically be added in the preliminary pages. Note that you
 % probably want a package for the actual code to go with this (e.g.,
 % algorithmic).
-%\usepackage{algorithm}
+%\usepackage{algorithm, algorithmic}
 %\renewcommand{\listalgorithmname}{\protect\centering\protect\Large LIST OF ALGORITHMS}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\listalgorithmname}{LIST OF ALGORITHMS}  % Match style in cls file!
+
 
 % Uncomment the following line to enable Unicode support. This will allow you
 % to enter non-ASCII characters (such as accented characters) directly without
@@ -58,7 +104,7 @@
 %\usepackage[utf8x]{inputenc}
 
 % Caption label with bold font
-\captionsetup{labelfont=bf}
+%\captionsetup{labelfont=bf}
 
 % Uncomment the following to avoid "widowing", where page breaks cause
 % single lines of paragraphs to float onto the next page (this is not
@@ -72,7 +118,7 @@
 \newtheorem{example}{\textsc{Example}}[chapter]
 
 % Figure Subdirectories
-\graphicspath{{chapter1.dir/}{chapter1.dir/}}
+%\graphicspath{{chapter1.dir/}{chapter1.dir/}}
 
 % Uncomment the following to have numbered subsubsections (by default
 % numbering goes only to subsections).
@@ -87,42 +133,8 @@
 
 \begin{document}
 
-\thesistitle{Title of the Thesis}
-
-\degreename{Doctor of Philosophy}
-
-% Use the wording given in the official list of degrees awarded by UCI:
-% http://www.rgs.uci.edu/grad/academic/degrees_offered.htm
-\degreefield{Earth System Science}
-
-% Your name as it appears on official UCI records.
-\authorname{Peter Anteater}
-
-% Use the full name of each committee member.
-\committeechair{Professor A}
-\othercommitteemembers
-{
- 	Professor B \\
- 	Professor C
-}
-
-\degreeyear{\the\year}
-
-\copyrightdeclaration
-{
-	{\copyright} {\Degreeyear} \Authorname
-}
-
-% If you have previously published parts of your manuscript, you must list the
-% copyright holders; see Section 3.2 of the UCI Thesis and Dissertation Manual.
-% Otherwise, this section may be omitted.
- \prepublishedcopyrightdeclaration
- {
- 	\hyperref[chap:2]{\Cref{chap:2}} {\copyright} 2014 IOP Publishing Ltd., \href{http://creativecommons.org/licenses/by/3.0}{Licensed under Creative Commons} \\
-% 	\hyperref[chap:3]{\Cref{chap:3}} {\copyright} 2014  American Geophysical Union \\
-% 	\hyperref[chap:4]{\Cref{chap:4}} {\copyright} 2014  American Geophysical Union \\
- 	All other materials {\copyright} {\Degreeyear} \Authorname
- }
+% include thesis-specific info (title, committee, etc.)
+\include{preliminaries}
 
 % Add PDF document info fields
 \hypersetup{
@@ -142,11 +154,6 @@
 
 % Preliminary pages are always loaded
 \preliminarypages
-
-% Chapter, section and subsection formats (smaller font sizes than default)
-\titleformat{\chapter}[display]{\fontsize{20}{20}\selectfont\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\raggedright}
-\titleformat*{\section}{\fontsize{16}{16}\selectfont\bfseries}
-\titleformat*{\subsection}{\fontsize{14}{14}\selectfont\bfseries}
 
 % Include the different components of your thesis, in separate files.
 % Using \include allows you to set \includeonly above.
@@ -177,6 +184,11 @@
 \captionsetup[table]{list=no}
 
 % If you have an appendix, it should come after the references.
-\include{appendix}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 
+\appendix
+\include{appendix_entropy_matchKKT}
+\include{appendix_marginalmap}
+%\include{appendix_mmap_FactorGraph}
+\include{appendix_meu}
 \end{document}
